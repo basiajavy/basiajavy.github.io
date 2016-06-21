@@ -6,7 +6,7 @@ COMMING SOON PAGE
     * Set your date here  (YEAR, MONTH (0 for January/11 for December), DAY, HOUR, MINUTE, SECOND)
     * according to the GMT+0 Timezone
     **/
-    var launch = new Date(2016, 08, 20, 17, 00);
+    var launch = new Date(2016, 07, 20, 17, 00, 00);
     /**
     * The script
     **/
@@ -19,12 +19,12 @@ COMMING SOON PAGE
     setDate();
     function setDate(){
         var now = new Date();
-        if( launch < now ){
-            days.html('<h1>0</h1>');
-            hours.html('<h1>0</h1>');
-            minutes.html('<h1>0</h1>');
-            seconds.html('<h1>0</h1>');
-            message.html('¡Ya despegamos!');
+        if( launch < now ){    
+            message.html ('<h1> Just married! <span class="light"><i class="fa fa-plane"></i></span></h1>');       
+            days.html('<h1></h1>');
+            hours.html('<h1>20.08.2016</h1>');
+            minutes.html('<h1></h1>');
+            seconds.html('<h1></h1>');            
         }
         else{
             var s = -now.getTimezoneOffset()*60 + (launch.getTime() - now.getTime())/1000;
@@ -44,7 +44,7 @@ COMMING SOON PAGE
             seconds.html('<h1>'+s+'"</h1>');
             setTimeout(setDate, 1000);
 
-            message.html('OUR SITE IS NOT READY YET, BUT WE ARE COMING SOON');
+            message.html('<h1>Despegamos en...<br>Startujemy za ...</h1>');
         }
     }
 })(jQuery);
